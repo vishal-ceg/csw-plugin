@@ -1,10 +1,5 @@
 package io.jenkins.plugins.sample;
 
-import static com.cloudbees.plugins.credentials.CredentialsMatchers.allOf;
-import static com.cloudbees.plugins.credentials.CredentialsMatchers.withId;
-import static com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials;
-import static hudson.Util.fixEmptyAndTrim;
-import static java.util.stream.Collectors.joining;
 import hudson.CopyOnWrite;
 import hudson.Extension;
 import hudson.FilePath;
@@ -20,12 +15,9 @@ import hudson.util.FormValidation;
 import hudson.util.ListBoxModel;
 import io.jenkins.plugins.credentials.CswApiToken;
 import io.jenkins.plugins.tools.ScannerInstallation;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.stream.Stream;
 
-import javax.servlet.ServletException;
+import java.io.IOException;
+import java.util.stream.Stream;
 
 import jenkins.model.Jenkins;
 import jenkins.tasks.SimpleBuildStep;
@@ -36,7 +28,6 @@ import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.DataBoundSetter;
 import org.kohsuke.stapler.QueryParameter;
 
-import com.cloudbees.plugins.credentials.CredentialsMatchers;
 import com.cloudbees.plugins.credentials.CredentialsProvider;
 import com.cloudbees.plugins.credentials.common.StandardListBoxModel;
 
