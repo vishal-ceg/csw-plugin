@@ -41,6 +41,7 @@ public class ScannerInstaller extends ToolInstaller {
 	public FilePath performInstallation(ToolInstallation tool, Node node,
 			TaskListener log) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
+		System.out.println("Installation logic........");
 		return null;
 	}
 	
@@ -49,9 +50,11 @@ public class ScannerInstaller extends ToolInstaller {
 
 	    @Override
 	    public String getDisplayName() {
-	      return "Install";
+	      return "Add scanner";
 	    }
-
+	    
+	    
+	    
 	    @Override
 	    public boolean isApplicable(Class<? extends ToolInstallation> toolType) {
 	      return toolType == ScannerInstallation.class;

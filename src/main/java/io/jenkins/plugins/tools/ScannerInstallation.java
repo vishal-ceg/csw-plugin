@@ -13,6 +13,7 @@ import jenkins.model.Jenkins;
 
 import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundConstructor;
+import org.kohsuke.stapler.DataBoundSetter;
 
 import hudson.Extension;
 import hudson.tools.ToolDescriptor;
@@ -21,11 +22,13 @@ import hudson.tools.ToolInstaller;
 import hudson.tools.ToolProperty;
 
 public class ScannerInstallation extends ToolInstallation{
-
+	
+		
 	@DataBoundConstructor
 	  public ScannerInstallation(@Nonnull String name, @Nonnull String home, List<? extends ToolProperty<?>> properties) {
 	    super(name, home, properties);
 	  }
+	
 	
 	@Extension
 	  @Symbol("csw")
