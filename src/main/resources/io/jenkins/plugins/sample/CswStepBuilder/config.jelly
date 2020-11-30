@@ -27,42 +27,38 @@
  
   <!-- common configuration -->
   <f:section title="">
-    <f:entry title="Csw token" field="cswTokenId">
+    <f:entry title="CSW API Token" field="cswTokenId">
       <c:select/>
     </f:entry>
     </f:section>
 
 <!-- Scanner configuration -->
   <f:section title="">
-     <f:entry title="Scanner Configuration"  description="">
+     <f:entry title="Select Scanner"  description="">
        <div class="csw-grid-wrapper">
-       <f:checkbox title="Sast, select installation" field="sast" />
+       <f:checkbox title="Sast" field="sast" />
        <span/>
-        <f:select field="sastInstallation"/>
         </div>
       </f:entry>
       
       <f:entry title=""  description="">
        <div class="csw-grid-wrapper">
-       <f:checkbox title="Dast, select installation" field="dast" />
+       <f:checkbox title="Dast" field="dast" />
        <span/>
-        <f:select field="dastInstallation"/>
         </div>
       </f:entry>
       
       <f:entry title=""  description="">
        <div class="csw-grid-wrapper">
-       <f:checkbox title="Oss, select installation" field="oss" />
+       <f:checkbox title="Oss" field="oss" />
        <span/>
-        <f:select field="ossInstallation"/>
         </div>
       </f:entry>
       
       <f:entry title=""  description="">
        <div class="csw-grid-wrapper">
-       <f:checkbox title="Container, select installation" field="container" />
+       <f:checkbox title="Container" field="container" />
        <span/>
-        <f:select field="containerInstallation"/>
         </div>
       </f:entry>
     </f:section>

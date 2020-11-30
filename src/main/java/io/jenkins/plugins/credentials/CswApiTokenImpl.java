@@ -36,7 +36,7 @@ public class CswApiTokenImpl extends BaseStandardCredentials implements
 	    @Nonnull
 	    @Override
 	    public String getDisplayName() {
-	      return "Csw API token";
+	      return "CSW API Token";
 	    }
 	  }
 

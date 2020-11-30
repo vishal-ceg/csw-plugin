@@ -36,6 +36,7 @@ import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.DataBoundSetter;
 import org.kohsuke.stapler.QueryParameter;
 
+import com.cli.csw.shell_cmd.DockerImageExecutor;
 import com.cloudbees.plugins.credentials.CredentialsProvider;
 import com.cloudbees.plugins.credentials.common.StandardListBoxModel;
 
@@ -48,11 +49,7 @@ public class CswStepBuilder extends Builder implements SimpleBuildStep {
 	private boolean dast = false;
 	private boolean oss = false;
 	private boolean container = false;
-	private String sastInstallation;
-	private String dastInstallation;
-	private String ossInstallation;
-	private String containerInstallation;
-	private Gravity gravity = Gravity.LOW;
+    private Gravity gravity = Gravity.LOW;
 	private String cswTokenId;
 
 	@DataBoundConstructor
@@ -112,46 +109,6 @@ public class CswStepBuilder extends Builder implements SimpleBuildStep {
 	}
 
 	@SuppressWarnings("unused")
-	public String getSastInstallation() {
-		return this.sastInstallation;
-	}
-
-	@SuppressWarnings("unused")
-	public String getDastInstallation() {
-		return this.dastInstallation;
-	}
-
-	@SuppressWarnings("unused")
-	public String getOssInstallation() {
-		return this.ossInstallation;
-	}
-
-	@SuppressWarnings("unused")
-	public String getContainerInstallation() {
-		return this.containerInstallation;
-	}
-
-	@DataBoundSetter
-	public void setSastInstallation(String sastInstallation) {
-		this.sastInstallation = sastInstallation;
-	}
-
-	@DataBoundSetter
-	public void setDastInstallation(String dastInstallation) {
-		this.dastInstallation = dastInstallation;
-	}
-
-	@DataBoundSetter
-	public void setOssInstallation(String ossInstallation) {
-		this.ossInstallation = ossInstallation;
-	}
-
-	@DataBoundSetter
-	public void setContainerInstallation(String containerInstallation) {
-		this.containerInstallation = containerInstallation;
-	}
-
-	@SuppressWarnings("unused")
 	public String getGravity() {
 		return gravity != null ? gravity.getGravity() : null;
 	}
@@ -175,7 +132,10 @@ public class CswStepBuilder extends Builder implements SimpleBuildStep {
 	public void perform(Run<?, ?> run, FilePath workspace, Launcher launcher,
 			TaskListener listener) throws InterruptedException, IOException {
 		System.out.println("Business logic .......");
+		DockerImageExecutor h= new DockerImageExecutor();
+		h.perform("C:\\Users\\Vishal\\Documents\\NetBeansProjects\\DependencyTree", "findsecbugs");
 	}
+	
 
 	@Symbol("greet")
 	@Extension
@@ -319,7 +279,7 @@ public class CswStepBuilder extends Builder implements SimpleBuildStep {
 
 		@Override
 		public String getDisplayName() {
-			return "Csw Configuration";
+			return "CSW Configuration";
 		}
 	}
 }
